@@ -17,3 +17,4 @@ app.use('/api', careerRoutes);
 
 const dynamicCareerRoutes = require('./routes/dynamicCareer');
 app.use('/api', dynamicCareerRoutes);
+git remote remove origin
