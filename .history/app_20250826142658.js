@@ -15,5 +15,3 @@ app.listen(PORT, () => {
 const careerRoutes = require('./routes/career');
 app.use('/api', careerRoutes);
 
-const dynamicCareerRoutes = require('./routes/dynamicCareer');
-app.use('/api', dynamicCareerRoutes);
