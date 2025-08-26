@@ -1,0 +1,57 @@
+# Smart Career Mentor 🧠🎓
+
+Smart Career Mentor is an AI-powered career guidance chatbot that helps users discover career paths, create resumes, and prepare for interviews using Large Language Models (LLMs). It leverages prompt engineering techniques, embeddings, similarity functions, and evaluation pipelines to provide personalized and intelligent career advice.
+
+---
+
+## 🚀 Project Overview
+
+### 👩‍🎓 Problem Statement
+Many students and young professionals struggle to identify careers that align with their interests and skills. Traditional career counseling is often time-consuming, generic, and not easily accessible.
+
+### 💡 Solution
+Smart Career Mentor uses powerful LLM-based features to act as a virtual career advisor, offering tailored guidance by:
+- Understanding user input (skills, interests, feelings).
+- Generating relevant job suggestions.
+- Matching resumes to job descriptions.
+- Offering tips for interviews and resumes.
+
+---
+
+## 🧠 Core Features & Concepts Used
+
+### 🔷 Prompting Techniques
+- **Zero Shot Prompting**: Directly generate career suggestions from user input without prior examples.
+- **One Shot Prompting**: Generate interview tips or answers with a single example shown.
+- **Multi Shot Prompting**: Generate structured resume templates or mock Q&A with multiple examples.
+- **Chain of Thought Prompting**: Break down how a particular career path fits the user step-by-step.
+- **Dynamic Prompting**: Prompts are built based on live user input (e.g., “I like biology and art”).
+
+### 🔷 Embeddings & Similarity
+- **Embeddings**: User input, job descriptions, and resumes are embedded into vector space.
+- **Cosine Similarity**: Match between skills and job descriptions.
+- **Dot Product**: Check alignment between resume and role expectations.
+- **L2 Distance**: Calculate how far two job profiles differ from each other.
+
+### 🔷 API Behavior & Tuning
+- **Function Calling**: To call external APIs (LinkedIn, etc.) for job data.
+- **Stop Sequences**: Ensures clean outputs (e.g., stopping after 3 suggestions).
+- **Structured Output**: Job matches, interview Q&A, resume data returned in JSON.
+- **System & User Prompting**: Roles defined using RTFC framework (Role, Task, Format, Constraints).
+- **Temperature, Top-K, Top-P**: Tuned to generate diverse but focused results.
+- **Token Logging**: Each call logs token usage in the console for monitoring.
+
+### 🔷 Evaluation & Testing
+- **Evaluation Dataset**: A test set of 5+ student inputs with expected outputs.
+- **Judge Prompt**: Compares model output with ideal career suggestions.
+- **Testing Framework**: Automated tests to validate the output.
+
+### 🔷 Storage & Search
+- **Vector Database (e.g., Pinecone/Weaviate)**: Store and retrieve embeddings of resumes, job roles, and responses.
+
+---
+
+## 🧩 Sample Prompt: Zero Shot Prompting
+
+```text
+You are a smart and friendly career mentor. When a user types in their interests or skills, instantly suggest 3 suitable career options. For each suggestion, give a job title and a one-line reason why it matches the user’s input. Do not add greetings or extra explanation.
