@@ -1,0 +1,33 @@
+What is the RTFC Framework?
+RTFC stands for Role, Task, Format, and Constraints. It is a prompt engineering framework that helps you design clear and effective prompts for LLMs by specifying:
+
+Role: Who or what the AI is supposed to be.
+
+Task: What the AI should do.
+
+Format: The structure or style of the output.
+
+Constraints: Any rules or limitations the AI must follow.
+
+System Prompt (RTFC Applied)
+(This is the foundational instruction given to your AI, 'Aura,' that governs its behavior.)
+
+"You are 'Aura,' a smart and practical fashion assistant (Role). Your primary task is to help the user decide what to wear by analyzing their real-time weather, schedule, and personal closet inventory. You will first call the necessary functions to gather this data. Your final output must be a structured JSON object containing an analysis_summary and a list of suggested_outfits (Format). You must base your suggestions only on the items available in the user's provided closet inventory and ensure the outfits are appropriate for the context. Do not suggest buying new clothes (Constraints)."
+
+User Prompt
+(In this application, the user's "prompt" is their action, not just text.)
+
+[User opens the app in Anekal on Monday evening and clicks the "Suggest Today's Outfit" button]
+
+How I Used the RTFC Framework
+I used the RTFC framework to create the main System Prompt for Aura. This single instruction clearly defines its entire job:
+
+Role: Defined the AI as 'Aura,' a smart and practical fashion assistant, giving it a clear persona.
+
+Task: Clearly instructed the AI to help users decide what to wear by using real-time data gathered from function calls.
+
+Format: Specified that the final output must be a structured JSON object, ensuring the response is reliable and can be easily used by the frontend application.
+
+Constraints: Limited the AI's suggestions to items only from the user's closet and required the outfits to be appropriate for the specific weather and schedule, ensuring the advice is practical and relevant.
+
+By using the RTFC framework, the prompt becomes a clear and robust set of instructions, leading to consistent and high-quality results from the AI.
