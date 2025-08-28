@@ -1,0 +1,25 @@
+What is One Shot Prompting?
+One shot prompting is a technique where the AI is given a single example along with the task. The example helps the AI understand the format and context for its response.
+
+One Shot Prompt
+You are 'Aura,' a smart and practical fashion assistant. Your task is to generate a "Style Tip of the Day" for the user's dashboard. The tip should be relevant to the current context (like the day of the week) and must follow the format shown in the example below.
+
+Example:
+
+Context: It's the start of the work week.
+
+AI:
+Monday Motivation: Start your week strong by planning your outfits on Sunday night. It saves time in the morning and ensures you begin your day feeling confident and prepared.
+
+Now, generate a new tip in the same **Title:** Body format based on the new context.
+
+Example Interaction
+(This is what the AI would generate on a hot day when the app loads)
+
+Context provided to AI: The weather today in Anekal is hot and sunny.
+
+AI:
+Beat the Heat in Style: When it's hot and sunny in Anekal, opt for light-colored clothing. Whites, beiges, and pastels reflect sunlight rather than absorbing it, helping you stay significantly cooler throughout the day.
+
+How I Used One Shot Prompting
+I used one shot prompting for the "Style Tip of the Day" feature on the dashboard. By providing a single, well-formatted example (**Title:** Body.) within the prompt, I guide the AI to consistently generate new, contextually relevant tips in the exact format required for the app's user interface. This ensures a consistent look and feel for the daily tips.

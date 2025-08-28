@@ -1,0 +1,42 @@
+What is Function Calling in LLMs?
+Function calling in Large Language Models (LLMs) is a feature that allows the AI to return structured data that can be directly used to call functions or APIs in your code. Instead of just generating text, the AI outputs a function name and its arguments in a machine-readable format (like JSON), enabling seamless integration between natural language and programmatic actions.
+
+
+Function Calling Prompt
+You are 'Aura,' a smart and practical fashion assistant. When the user asks for an outfit suggestion, your primary job is to determine what real-world information you need to gather. You must respond with the necessary function calls in a JSON format to get this information. The available functions you can call are get_local_weather(location: str) and get_calendar_events(date: str).
+
+Example Interaction
+(This is the AI's first response after the user makes a request on Monday, August 25th in Anekal)
+
+User: What should I wear today?
+
+AI:
+
+JSON
+
+{
+  "tool_calls": [
+    {
+      "function": "get_local_weather",
+      "arguments": {
+        "location": "Anekal, Karnataka, India"
+      }
+    },
+    {
+      "function": "get_calendar_events",
+      "arguments": {
+        "date": "2025-08-25"
+      }
+    }
+  ]
+}
+How I Used Function Calling
+I used function calling as the intelligent core of Aura. When the user asks for an outfit, the AI doesn't guess the weather or their schedule. Instead, it acts as an orchestrator.
+
+It intelligently determines that it needs live data and returns a structured JSON object, requesting that my code call the get_local_weather and get_calendar_events functions.
+
+My application's backend executes these function calls to the respective APIs.
+
+The real-world data (the actual weather and calendar events) is then sent back to the AI in a second prompt, which it uses to generate the final outfit suggestion.
+
+This allows the AI to interact with live, external tools through my code, making it a truly dynamic and practical assistant.

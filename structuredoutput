@@ -1,0 +1,46 @@
+What is Structured Output in LLMs?
+Structured output in Large Language Models (LLMs) refers to generating responses in a predefined, organized format such as JSON. This makes it easier for other systems or applications to reliably parse, understand, and use the AI’s output programmatically.
+
+Structured Output Prompt
+You are 'Aura,' a smart and practical fashion assistant. After analyzing the user's weather, schedule, and closet, your final output must be a single, structured JSON object. The object should contain:
+
+analysis_summary: A short, natural language summary of the situation.
+
+suggested_outfits: An array of 2 outfit objects.
+
+Each outfit object must have keys for outfit_name, pieces (an object with top, bottom, and shoes), and styling_tip.
+
+Example Interaction
+(This is the AI's final output after it has used function calling to get the weather and calendar data for Monday, August 25th in Anekal.)
+
+Context provided to AI: Weather in Anekal is 31°C and humid with a chance of rain. The user has a "Team Dinner" at 7 PM.
+
+AI:
+
+JSON
+
+{
+  "analysis_summary": "For your Monday evening in Anekal, you have a 'Team Dinner' in warm, humid weather. You need a 'smart casual' outfit that is both comfortable and professional.",
+  "suggested_outfits": [
+    {
+      "outfit_name": "Polished & Comfortable",
+      "pieces": {
+        "top": "Navy blue linen shirt",
+        "bottom": "Beige chino trousers",
+        "shoes": "Brown leather loafers"
+      },
+      "styling_tip": "Linen is an excellent choice for humidity. Roll up the sleeves for a more relaxed feel at dinner."
+    },
+    {
+      "outfit_name": "Modern Smart Casual",
+      "pieces": {
+        "top": "White short-sleeve polo shirt",
+        "bottom": "Grey tailored trousers",
+        "shoes": "Clean white sneakers"
+      },
+      "styling_tip": "This is a fresh take on smart casual. Ensure your sneakers are clean to keep the look sharp."
+    }
+  ]
+}
+How I Used Structured Output
+I used structured output as the critical final step in Aura's process. By forcing the AI to return its outfit suggestions as a predictable JSON object with a strict schema, I ensure its response is always reliable. This makes it incredibly easy for my React frontend to parse the data and render it into a visually appealing and user-friendly display (like outfit cards) without any errors or guesswork. It's the essential bridge between the AI's "brain" and the user interface.
